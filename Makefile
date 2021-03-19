@@ -18,8 +18,6 @@ all:
 	if [ ! -d "compile/images" ]; then cp -r images compile; fi
 	if [ -d "compile/bibliography" ]; then cp images/* compile/images; fi
 	if [ ! -d "compile/bibliography" ]; then cp -r images compile; fi
-	if [ -d "compile/parts" ]; then cp parts/* compile/parts; fi
-	if [ ! -d "compile/parts" ]; then cp -r parts compile; fi
 	cd compile && \
 	$(LATEXMK) $(LATEXMKOPT) $(MAIN).tex
 	cp $(MAINDIR)/compile/$(MAIN).pdf $(MAINDIR)
